@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.example.randomuser.feature.details.DetailsHandler" />
+
+        <variable
+            name="viewModel"
+            type="com.example.randomuser.feature.details.DetailsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/margin_regular"
+        tools:context=".feature.details.DetailsFragment">
+
+        <ImageView
+            android:id="@+id/details_iv_portrait"
+            circularProfileImage="@{viewModel.details.picture.large}"
+            android:layout_width="@dimen/profile_dimension"
+            android:layout_height="@dimen/profile_dimension"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline"
+            tools:src="@tools:sample/avatars" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/details_tv_nameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/title_fullname"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/font_size_regular"
+            app:layout_constraintTop_toBottomOf="@+id/details_iv_portrait"
+            tools:text="@string/dummy_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/details_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xx_small"
+            android:text="@{viewModel.details.name.first + ` ` + viewModel.details.name.last}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/font_size_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_tv_nameTitle"
+            tools:text="@string/dummy_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/details_tv_addressTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:text="@string/title_address"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/font_size_regular"
+            app:layout_constraintTop_toBottomOf="@+id/details_tv_name"
+            tools:text="@string/dummy_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/details_tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xx_small"
+            android:text="@{viewModel.address}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/font_size_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_tv_addressTitle"
+            tools:text="@string/dummy_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/details_tv_countryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:text="@string/title_country"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/font_size_regular"
+            app:layout_constraintTop_toBottomOf="@+id/details_tv_address"
+            tools:text="@string/dummy_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/details_tv_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xx_small"
+            android:text="@{viewModel.details.location.country}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/font_size_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_tv_countryTitle"
+            tools:text="@string/dummy_title" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/details_tv_emailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:text="@string/title_email"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/font_size_regular"
+            app:layout_constraintTop_toBottomOf="@+id/details_tv_country"
+            tools:text="@string/dummy_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/details_tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xx_small"
+            android:text="@{viewModel.details.email}"
+            android:onClick="@{() -> handler.sendEmailTo(viewModel.details.email)}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/colorEmailText"
+            android:textSize="@dimen/font_size_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_tv_emailTitle"
+            tools:text="@string/dummy_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/details_tv_cellphoneTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_regular"
+            android:text="@string/title_cellphone"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/font_size_regular"
+            app:layout_constraintTop_toBottomOf="@+id/details_tv_email"
+            tools:text="@string/dummy_title" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/details_tv_cellphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xx_small"
+            android:text="@{viewModel.details.cell}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/font_size_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_tv_cellphoneTitle"
+            tools:text="@string/dummy_title" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

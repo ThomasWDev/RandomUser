@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.randomuser.core.data.user.Result" />
+
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:clickable="true"
+        android:elevation="@dimen/margin_regular"
+        android:focusable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorOnPrimary">
+
+            <ImageView
+                android:id="@+id/item_iv_portrait"
+                profileImage="@{item.picture.thumbnail}"
+                android:layout_width="@dimen/thumbnail_dimension"
+                android:layout_height="@dimen/thumbnail_dimension"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/item_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_extra_small"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:minLines="1"
+                android:padding="@dimen/margin_extra_small"
+                android:text="@{item.name.first + ` ` + item.name.last}"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="@dimen/font_size_regular"
+                app:layout_constraintStart_toEndOf="@+id/item_iv_portrait"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/dummy_title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/item_tv_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_xx_small"
+                android:layout_marginBottom="@dimen/margin_extra_small"
+                android:maxLines="1"
+                android:paddingStart="@dimen/margin_extra_small"
+                android:paddingEnd="@dimen/margin_extra_small"
+                android:text="@{item.location.country}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="@dimen/font_size_extra_small"
+                app:layout_constraintStart_toEndOf="@+id/item_iv_portrait"
+                app:layout_constraintTop_toBottomOf="@+id/item_tv_name"
+                tools:text="@string/dummy_body" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

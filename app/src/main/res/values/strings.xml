@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RandomUser</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="dummy_title">Hello</string>
+    <string name="dummy_body">World</string>
+
+    <string name="title_fullname">Fullname</string>
+    <string name="title_address">Address</string>
+    <string name="title_email">Email</string>
+    <string name="title_cellphone">Cellphone</string>
+    <string name="title_country">Country</string>
+
+</resources>
